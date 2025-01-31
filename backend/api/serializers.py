@@ -13,6 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         # ** =  splits the keyword argument and passes them in dictionary
         user = User.objects.create_user(**validated_data)
+        print(user)
         return user
     
 class NoteSerializer(serializers.ModelSerializer):

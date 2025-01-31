@@ -1,10 +1,10 @@
-import { Await, Navigate } from "react-router-dom";
+import { Await , Navigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import api from "../api";
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
 import { useState, useEffect } from "react";
 
-function ProtectedRoute({childern}){
+function ProtectedRoute({children}){
     const [isAuthorized, setIsAuthorized] = useState(null);
 
     useEffect(() =>{
@@ -58,7 +58,7 @@ function ProtectedRoute({childern}){
     if (isAuthorized === null){
         return <div>Loading...</div>;
     }
-    return isAuthorized ? childern : <Navigate to= "/login" /> ;
+    return isAuthorized ? children : <Navigate to= "/login" /> ;
 
 }
 
